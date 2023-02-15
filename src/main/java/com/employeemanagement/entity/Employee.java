@@ -20,7 +20,7 @@ public class Employee {
     @Column(name = "empsal")
     private Double empSal;
 
-    @Column(name = "empdept")
+    @Column(name = "empdeptid")
     private String empDept;
 
     @Column(name = "currentdate")
