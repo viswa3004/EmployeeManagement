@@ -17,3 +17,6 @@ CREATE TABLE `employee` (
   `address` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`empid`)
 ) 
+
+
+Adding Junit + Mockito test cases for the Application
