@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api")
@@ -21,7 +22,11 @@ public class EmployeeController {
     @GetMapping("/employees")
     public List<Employee> employeeList(){
 
-        return employeeService.getEmployees();
+        List<Employee> employeeList= employeeService.getEmployees();
+
+        List<Employee> employeeFilterList=employeeList.stream().filter(t->t.getEmpDept().equals("SoftwareEngineer")).collect(Collectors.toList());
+
+        return employeeFilterList;
     }
 
     @PostMapping("/saveEmployee")
